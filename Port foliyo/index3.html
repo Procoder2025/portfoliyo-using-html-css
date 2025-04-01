@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #0d3b1e;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 80px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: #ffcc00;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 100px 80px;
+            background-color: #0d3b1e;
+            color: white;
+            margin-top: 70px;
+        }
+
+        .hero img {
+            max-width: 400px;
+            max-height: 600px;
+            border-radius: 18px;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            font-weight: 700;
+        }
+
+        .hero-content span {
+            color: #ffcc00;
+        }
+
+        .cta {
+            background: #ffcc00;
+            color: #0d3b1e;
+            padding: 10px 20px;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        /* Sections */
+        section {
+            text-align: center;
+            padding: 50px 50px;
+        }
+
+        .project-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .project {
+            background: white;
+            width: 22%;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .project img {
+            width: 60%;
+            border-radius: 10px;
+        }
+
+        .skill-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-weight: bold;
+        }
+
+        /* Testimonials */
+        .testimonial {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            display: inline-block;
+            width: 25%;
+        }
+
+        /* Footer */
+        footer {
+            background: #0d3b1e;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">My<span>Portfolio</span></div>
+        <nav>
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="project.html">Projects</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="testimonial.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm <span>KARTHIKEYAN</span></h1>
+            <p>I'm a passionate <span>Web Developer & UI/UX Designer</span>.</p>
+            <button class="cta" onclick="downloadResume()">Download Resume</button>
+        </div>
+        <img src="dd.png" alt="My Profile">
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I'm a Computer Science student and a full-stack developer, passionate about creating modern and user-friendly web applications.</p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2><br>
+        <div class="project-list">
+            <div class="project">
+                <img src="pro.jpg" alt="Project 1">
+                <h3>Project 1</h3>
+                <p>AI Financial Assistant for better investment decisions.</p>
+            </div>
+            <div class="project">
+                <img src="pro1.jpg" alt="Project 2">
+                <h3>Project 2</h3>
+                <p>AI-powered drone system for farmers.</p>
+            </div>
+            <div class="project">
+                <img src="Smart Ambulance System with AI triage.jpg" alt="Project 3">
+                <h3>Project 3</h3>
+                <p>Smart Ambulance System with AI triage.</p>
+            </div>
+            <div class="project">
+                <img src="AI-driven accident detection and response dashboard.png" alt="Project 4">
+                <h3>Project 4</h3>
+                <p>AI-driven accident detection and response dashboard.</p>
+            </div>
+            <div class="project">
+                <img src="Simulation-based cancer treatment outcome enhancement.png" alt="Project 5">
+                <h3>Project 5</h3>
+                <p>Simulation-based cancer treatment outcome enhancement.</p>
+            </div>
+            <div class="project">
+                <img src="Augmented reality (AR) app for school education.png" alt="Project 6">
+                <h3>Project 6</h3>
+                <p>Augmented reality (AR) app for school education.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: your.email@example.com</p>
+        <button class="cta" onclick="openEmail()">Send Email</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Your Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function openEmail() {
+            window.location.href = "mailto:your.email@example.com";
+        }
+
+        function downloadResume() {
+            window.open('resume.pdf', '_blank');
+        }
+    </script>
+
+</body>
+</html>

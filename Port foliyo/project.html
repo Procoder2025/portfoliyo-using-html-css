@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: #0d3b1e;
+            color: white;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url("back.jpg") no-repeat center center/cover;
+            padding: 80px;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+        }
+
+        .hero-btn {
+            background: #ff6600;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        /* Sections */
+        section {
+            padding: 50px;
+        }
+
+        .services, .projects, .about, .contact {
+            background: white;
+        }
+
+        /* Services Section */
+        .service-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .service-item {
+            background: #ff6600;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            width: 200px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Projects Section */
+        .project-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .project-card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            width: 250px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Contact Section */
+        form input, form textarea, form button {
+            display: block;
+            width: 60%;
+            margin: 10px auto;
+            padding: 10px;
+        }
+
+        button {
+            background: #ff6600;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            background: #0d3b1e;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">My Portfolio</div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Hello, I'm <span>Your Name</span></h1>
+        <p>A UI/UX Designer & Web Developer</p>
+        <button class="hero-btn">View My Work</button>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>I am a passionate web developer and UI/UX designer with experience in creating modern, user-friendly websites.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2>What I Do</h2>
+        <div class="service-grid">
+            <div class="service-item">Web Development</div>
+            <div class="service-item">UI/UX Design</div>
+            <div class="service-item">Mobile App Development</div>
+            <div class="service-item">SEO & Marketing</div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2>My Recent Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <img src="project.jpg" alt="Project">
+                <p>E-commerce Website</p>
+            </div>
+            <div class="project-card">
+                <img src="project1.png" alt="Project">
+                <p>Finance Dashboard</p>
+            </div>
+            <div class="project-card">
+                <img src="project2.png" alt="Project">
+                <p>AI Chatbot</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Your Name. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth Scrolling
+        document.querySelectorAll("nav ul li a").forEach(link => {
+            link.addEventListener("click", function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute("href")).scrollIntoView({
+                    behavior: "smooth"
+                });
+            });
+        });
+
+        // Contact Form Validation
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+
+            if(name === "" || email === "") {
+                alert("Please fill out all fields.");
+            } else {
+                alert("Message sent successfully!");
+                document.getElementById("contactForm").reset();
+            }
+        });
+
+        // Scroll to Portfolio
+        document.querySelector(".hero-btn").addEventListener("click", function() {
+            document.querySelector("#projects").scrollIntoView({ behavior: "smooth" });
+        });
+    </script>
+
+</body>
+</html>

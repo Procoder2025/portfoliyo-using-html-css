@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            text-align: center;
+        }
+
+        /* Header Styles */
+        header {
+            background: #047e3b;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .highlight {
+            color: rgb(252, 252, 252);
+        }
+
+        /* Navigation */
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: red;
+        }
+
+        /* Introduction Section */
+        .intro {
+            padding-top: 100px;
+        }
+
+        .intro img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .intro img:hover {
+            transform: scale(1.05);
+        }
+
+        .intro p {
+            width: 60%;
+            margin: 20px auto;
+            font-size: 18px;
+        }
+
+        /* Skills Section */
+        .skills {
+            margin: 40px auto;
+            width: 80%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .skill-box {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            transition: transform 0.3s;
+        }
+
+        .skill-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Progress Bar Animation */
+        .progress-bar {
+            width: 100%;
+            background: #ddd;
+            height: 10px;
+            border-radius: 5px;
+            margin-top: 5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-bar span {
+            display: block;
+            height: 100%;
+            background: rgb(3, 110, 42);
+            border-radius: 5px;
+            width: 0;
+            transition: width 1.5s ease-in-out;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .skill-box {
+                width: 90%;
+            }
+
+            .intro img {
+                width: 250px;
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1><span class="highlight">My</span>Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="index3.html">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#">LinkedIn</a></li>
+                <li><a href="#">GitHub</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Introduction Section -->
+    <section class="intro">
+        <img src="dd.png" alt="Profile Picture">
+        <p>Hello there! My name is Liviu and this is my little corner on the Internet. I'm a <strong>web developer</strong> by profession, but also an avid photographer, book reader, and cyclist. I enjoy creating things that focus on usefulness and elegance. Let's <a href="#">get in touch</a>!</p>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills">
+        <div class="skill-box">
+            <h3>PHP Web Development</h3>
+            <p>6 years, 9 projects</p>
+            <div class="progress-bar"><span style="width: 90%;"></span></div>
+        </div>
+        <div class="skill-box">
+            <h3>WordPress</h3>
+            <p>2 years, 7 projects</p>
+            <div class="progress-bar"><span style="width: 70%;"></span></div>
+        </div>
+        <div class="skill-box">
+            <h3>PostgreSQL</h3>
+            <p>2 years, 4 projects</p>
+            <div class="progress-bar"><span style="width: 50%;"></span></div>
+        </div>
+        <div class="skill-box">
+            <h3>Symfony2</h3>
+            <p>1 year, 2 projects</p>
+            <div class="progress-bar"><span style="width: 30%;"></span></div>
+        </div>
+        <div class="skill-box">
+            <h3>Dojo</h3>
+            <p>1 year, 2 projects</p>
+            <div class="progress-bar"><span style="width: 30%;"></span></div>
+        </div>
+        <div class="skill-box">
+            <h3>Magento</h3>
+            <p>1 year, 1 project</p>
+            <div class="progress-bar"><span style="width: 20%;"></span></div>
+        </div>
+    </section>
+
+    <!-- JavaScript for Animations -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            console.log("Portfolio website loaded successfully!");
+
+            // Animate progress bars
+            const progressBars = document.querySelectorAll(".progress-bar span");
+            progressBars.forEach((bar) => {
+                bar.style.width = bar.getAttribute("style").split(":")[1];
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Contact Page</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        /* Contact Form Container */
+        .container {
+            background: white;
+            max-width: 600px;
+            width: 100%;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .container h2 {
+            color: #004d25;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .container p {
+            font-size: 14px;
+            color: #666;
+            margin: 10px 0 20px;
+        }
+
+        /* Form Fields */
+        .form-group {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .form-group input,
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: border 0.3s ease-in-out;
+        }
+
+        input:focus,
+        textarea:focus {
+            border: 1px solid #004d25;
+            outline: none;
+        }
+
+        textarea {
+            height: 100px;
+            resize: none;
+        }
+
+        /* Checkboxes */
+        .checkbox-group {
+            text-align: left;
+            margin: 15px 0;
+        }
+
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .checkbox-group input {
+            margin-right: 8px;
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            background: #004d25;
+            color: white;
+            padding: 12px;
+            width: 100%;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #00703c;
+        }
+
+        /* Footer Section */
+        .footer {
+            background: #004d25;
+            color: white;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 6px;
+            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .stars {
+            color: #FFD700;
+            font-size: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 500px) {
+            .form-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Portfolio Contact Page</h2>
+        <p>Thank you for contacting me. I would like to get to know more about you in the interest of our possible partnership.</p>
+
+        <form id="contactForm">
+            <div class="form-group">
+                <input type="text" id="firstName" placeholder="First Name" required>
+                <input type="text" id="lastName" placeholder="Last Name" required>
+            </div>
+
+            <input type="email" id="email" placeholder="name@email.com" required>
+            <br><br>
+
+            <label for="question">Enter a question</label>
+            <textarea id="question" placeholder="Type your question..."></textarea>
+
+            <div class="checkbox-group">
+                <label><input type="checkbox" class="option"> Enter an option</label>
+                <label><input type="checkbox" class="option"> Enter an option</label>
+                <label><input type="checkbox" class="option"> Enter an option</label>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+
+        <div class="footer">
+            <span>Template</span>
+            <span class="stars">⭐⭐⭐⭐⭐</span>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            let firstName = document.getElementById("firstName").value;
+            let lastName = document.getElementById("lastName").value;
+            let email = document.getElementById("email").value;
+            let question = document.getElementById("question").value;
+
+            if (firstName && lastName && email && question) {
+                alert("Thank you, " + firstName + "! Your message has been submitted.");
+                this.reset(); // Reset form fields
+            } else {
+                alert("Please fill in all fields before submitting.");
+            }
+        });
+    </script>
+
+</body>
+</html>

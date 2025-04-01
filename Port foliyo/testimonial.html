@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonial Slider</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .testimonial-container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            border: 3px solid #333;  /* 🛑 Added dark border */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 600px;
+            position: relative;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .testimonial-container:hover {
+            transform: scale(1.02);  /* 🔥 Slight zoom effect */
+        }
+
+        .testimonial-text {
+            font-size: 18px;
+            font-style: italic;
+            color: #333;
+            margin-bottom: 20px;
+            opacity: 0;
+            transition: opacity 0.6s ease-in-out;
+        }
+
+        .testimonial-text.active {
+            opacity: 1;
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .author-info img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #333;  /* 🛑 Added border to profile image */
+        }
+
+        .author-details {
+            text-align: left;
+        }
+
+        .author-name {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .author-role {
+            font-size: 14px;
+            color: gray;
+        }
+
+        /* Navigation dots */
+        .dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            margin: 0 5px;
+            background: #ccc;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .dot.active {
+            background: black;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="testimonial-container">
+        <blockquote class="testimonial-text active">
+            "Working with Julian was a transformative experience. Their eye for detail and ability to create mesmerizing visual patterns are unmatched. Every piece brought new depth and fascination."
+        </blockquote>
+        <blockquote class="testimonial-text">
+            "Julian's expertise and dedication to storytelling elevated our project. Their creativity is truly inspiring, and their work speaks volumes about their talent."
+        </blockquote>
+        <blockquote class="testimonial-text">
+            "A true artist! Julian has a rare ability to blend aesthetics and function seamlessly. Collaborating with them was an absolute joy!"
+        </blockquote>
+
+        <div class="author-info">
+            <img src="dd.png" alt="Profile">
+            <div class="author-details">
+                <div class="author-name">Amara Collins</div>
+                <div class="author-role">Creative Director of Visual Narratives</div>
+            </div>
+        </div>
+
+        <!-- Navigation Dots -->
+        <div class="dots">
+            <div class="dot active" onclick="changeTestimonial(0)"></div>
+            <div class="dot" onclick="changeTestimonial(1)"></div>
+            <div class="dot" onclick="changeTestimonial(2)"></div>
+        </div>
+    </div>
+
+    <script>
+        let currentTestimonial = 0;
+        const testimonials = document.querySelectorAll(".testimonial-text");
+        const dots = document.querySelectorAll(".dot");
+
+        function changeTestimonial(index) {
+            testimonials[currentTestimonial].classList.remove("active");
+            dots[currentTestimonial].classList.remove("active");
+
+            currentTestimonial = index;
+
+            testimonials[currentTestimonial].classList.add("active");
+            dots[currentTestimonial].classList.add("active");
+        }
+
+        function autoSlide() {
+            let nextIndex = (currentTestimonial + 1) % testimonials.length;
+            changeTestimonial(nextIndex);
+        }
+
+        setInterval(autoSlide, 5000); // Auto-slide every 5 seconds
+    </script>
+
+</body>
+</html>
